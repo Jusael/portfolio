@@ -1,0 +1,189 @@
+html, body, #root {
+  
+  margin: 0;
+  padding: 0;
+}
+
+/* Vite 기본 body flex 있으면 반드시 제거! */
+body {
+margin :0;
+}
+
+.heroSection{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+
+  justify-content:center;  /* 세로만 중앙 */
+  align-items:stretch;     /* 가로 정렬 건드리지 말기 */
+}
+
+/* 각 페이지(섹션) 중앙정렬 + 스냅 */
+section {
+  scroll-snap-align:start;
+  /* padding은 section에 주면 중앙이 흔들릴 수 있음 */
+  
+}
+
+.profile{
+  display: flex;
+  width:100%;
+  max-width: 1100px;
+  align-items: flex-start;
+gap: 45px;
+  
+}
+
+.profileLeft{
+  flex:0 0 25%;
+  flex-direction: column;
+  display: flex;
+}
+
+.profileRight{
+  flex:0 0 75%;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.inproduce{
+  display: flex;
+  width:100%;
+  max-width: 1100px;
+  align-items: flex-start;
+  gap: 45px;
+  
+}
+
+.inproduceLeft{
+  flex:0 0 25%;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+.inproduceRight{
+  flex:0 0 75%;
+  flex-direction: column;
+  display: flex;
+    padding: 0px;
+    align-items: flex-start;
+}
+
+.skillSection{
+  min-height: 100vh; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill{
+  display: flex;
+  width:100%;
+  max-width: 1100px;
+  align-items: flex-start;
+  gap: 45px;
+  
+}
+
+.skillLeft{
+  flex:0 0 25%;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+.skillRight{
+  flex:0 0 75%;
+  flex-direction: column;
+  display: flex;
+    padding: 0px;
+    align-items: flex-start;
+}
+
+.summaryText{
+  white-space: pre-line;
+  line-height: 1.6;
+  margin:0;
+}
+
+
+.personalProjectSection{
+  min-height: 100vh;   /* ⭐ 화면 높이만큼 */
+  width: 100%;
+  display: flex;
+  
+}
+
+.personalProject{
+  display: flex;
+  width:100%;
+  max-width: 1100px;
+  flex-direction: row;
+  gap: 45px;
+  
+}
+
+.personalProjectLeft{
+  flex:0 0 25%;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px;
+}
+
+.personalProjectRight{
+  flex:0 0 75%;
+  flex-direction: column;
+  display: flex;
+    padding: 0px;
+    align-items: flex-start;
+}
+
+/* 내용 폭 제한 + 여백 */
+.container {
+  width: 100%;
+  max-width: 980px;
+  
+}
+
+.projectCard {
+  position: relative;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+
+  /* ⭐ 핵심 — 대각선 마스크 */
+  -webkit-mask-image: linear-gradient(
+    100,
+    transparent 0%,
+    transparent 48%,
+    black 52%,
+    black 100%
+  );
+
+  mask-image: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 48%,
+    black 52%,
+    black 100%
+  );
+}
+
+.projectCard:hover .cardOverlay {
+  opacity: 0.35; /* 불투명도 */
+} 
