@@ -6,10 +6,14 @@ html, body, #root {
 
 /* Vite 기본 body flex 있으면 반드시 제거! */
 body {
-margin :0;
+  font-family:
+    "Malgun Gothic",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
 }
 
-.heroSection{
+.profileSection{
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -115,7 +119,8 @@ gap: 45px;
   min-height: 100vh;   /* ⭐ 화면 높이만큼 */
   width: 100%;
   display: flex;
-  
+    align-items: flex-start;
+    border: 1px;
 }
 
 .personalProject{
@@ -123,6 +128,7 @@ gap: 45px;
   width:100%;
   max-width: 1100px;
   flex-direction: row;
+
   gap: 45px;
   
 }
