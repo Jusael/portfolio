@@ -88,8 +88,8 @@ export default function ProjectModal({
                                         marginTop: 10,
                                         display: "block"
                                     }}
-                                />
-                            </div>
+                                 />
+                            </div> 
 
                             <div style={{ width: isWeb ? "60%" : "70%", display: "flex", flexDirection: "column", }}>
                                 <h4 style={{ marginBottom: 0 }}>Summary</h4>
