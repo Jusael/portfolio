@@ -6,9 +6,9 @@ export default function ProjectSection({
 }:{onSelect?:(p:Project)=>void}) {
 
   return(
-    <div className="personalProjectSection" style={{border : "1px solid"}}>
+    <div className="personalProjectSection" >
         <div style={{ display: "flex", justifyContent: "center", width: "100%", height: "100%" }}>
-          <div className="personalProject"style={{border : "1px solid"}}>
+          <div className="personalProject">
             <div className="personalProjectLeft">
               <p style={{ margin: 0, fontSize: 36, color: "#3153aa" }}>
                 PERSONAL

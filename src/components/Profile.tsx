@@ -10,7 +10,6 @@ import { FaEnvelope, FaGithub } from "react-icons/fa";
           paddingBottom: 40,
           justifyContent: "center",
           display: "flex",
-          border : "1px solid"
         }}>
           <div className="profile" >
 
@@ -67,7 +66,9 @@ import { FaEnvelope, FaGithub } from "react-icons/fa";
             <div className="inproduceRight"
             >
 
-              <p className="summaryText">
+              <p className="summaryText"style={{
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", Arial, sans-serif'
+}}>
                 {
                   `운영 환경까지 고려한 설계를 지향하는 백엔드 개발자입니다.
 
