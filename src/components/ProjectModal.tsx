@@ -1,14 +1,26 @@
 import { useState } from "react";
 import type { Project } from "../types/project";
 import { projectDetails } from "../data/projectDetails";
+import { FaX } from "react-icons/fa6";
+
+
+
 
 export default function ProjectModal({
     selected,
-    close
-}: { selected: Project, close: () => void }) {
+    close,
+    openArchitecture
+}: {
+    selected: Project,
+    close: () => void,
+    openArchitecture: () => void
+}) {
+
+    const selectedDetail = projectDetails[selected.projectId];
+    const isWeb = selected.projectId == "standAloneWeb"
+    const isDeepDiveDocs = !!selectedDetail.notionDocs?.length;
 
     const [openTech, setOpenTech] = useState(false);
-    const selectedDetail = projectDetails[selected.projectId];
 
     if (!selectedDetail) return null;
 
@@ -16,7 +28,7 @@ export default function ProjectModal({
 
 
         <div
-  onClick={close}
+            onClick={close}
             style={{
                 position: "fixed",
                 top: 0,
@@ -34,10 +46,10 @@ export default function ProjectModal({
                 style={{
                     background: "white",
                     padding: 30,
-                    width: 900,
-                    maxWidth: "55vw",
+                    width: isWeb ? 1200 : 900,
+                    maxWidth: isWeb ? "95vw" : "55vw",
                     borderRadius: 10,
-                    maxHeight: "72h",
+                    maxHeight: isWeb ? "92vh" : "72h",
                     overflowY: "auto"
                 }}
             >
@@ -53,19 +65,33 @@ export default function ProjectModal({
                         fontWeight: 600
                     }}
                 >
-                    {selected.title}
+                    <div style={{ display: "flex", justifyContent: "space-between", }}>
+                        <div>{selected.title} </div>
+                        <div style={{ display: "flex", alignItems: "center" }} onClick={close}><FaX color="#f9f9f9" /></div>
+                    </div>
                 </div>
                 {selectedDetail && (
                     <>
                         <div style={{ display: "flex", flexDirection: "row", gap: 20 }}>
-                            <div style={{ width: "30%", }}>
+                            <div
+                                style={{
+                                    width: isWeb ? "100%" : "30%"
+                                }}
+                            >
+
                                 <img
                                     src={selectedDetail.gif}
-                                    style={{ width: "100%", height: "100%", borderRadius: 10, marginTop: 10 }}
+                                    style={{
+                                        width: "100%",
+                                        height: "auto",       
+                                        borderRadius: 10,
+                                        marginTop: 10,
+                                        display: "block"
+                                    }}
                                 />
                             </div>
 
-                            <div style={{ width: "70%", display: "flex", flexDirection: "column", }}>
+                            <div style={{ width: isWeb ? "60%" : "70%", display: "flex", flexDirection: "column", }}>
                                 <h4 style={{ marginBottom: 0 }}>Summary</h4>
                                 <div
                                     style={{
@@ -88,9 +114,40 @@ export default function ProjectModal({
                                         background: "#e5e5e5",
                                         marginTop: 0
                                     }}
-                                />
 
-                                <div>{selectedDetail.architecture}</div>
+                                />
+                                <div
+                                    style={{ cursor: "pointer", color: "#3153aa" }}
+                                    onClick={openArchitecture}
+                                >
+                                    Architecture Image
+                                </div>
+
+                                {isDeepDiveDocs && (
+                                    <>
+                                        <h4 style={{ marginBottom: 0 }}>Deep Dive Docs</h4>
+
+                                        <div
+                                            style={{
+                                                width: "100%",
+                                                height: 1,
+                                                background: "#e5e5e5",
+                                                marginTop: 0
+                                            }}
+                                        />
+
+                                        <div style={{ marginTop: 5, fontSize: 14, marginLeft: 10, cursor: "pointer", color: "#3153aa" }}>
+                                            {selectedDetail.notionDocs?.map((doc) => (
+                                                <div
+                                                    style={{ margin: 4 }}
+                                                    onClick={() => window.open(doc.url)}
+                                                >
+                                                    · {doc.title}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
 
                                 <h4
                                     style={{ marginBottom: 0, cursor: "pointer" }}
@@ -111,7 +168,7 @@ export default function ProjectModal({
                                 {openTech && (
                                     <div style={{ marginTop: 5, fontSize: 14, marginLeft: 10 }}>
                                         {selectedDetail.techDetail.map(t => (
-                                            <div key={t}>· {t}</div>
+                                            <div style={{ margin: 4 }} key={t}>· {t}</div>
                                         ))}
                                     </div>
                                 )}
@@ -119,17 +176,12 @@ export default function ProjectModal({
                         </div>
                     </>
                 )}
-
-
-
-                <button
-                    style={{ marginTop: 20 }}
-                    onClick={close}
-                >
-                    닫기
-                </button>
             </div>
+
         </div>
 
+
+
     );
+
 }
