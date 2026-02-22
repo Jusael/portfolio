@@ -6,6 +6,13 @@ export default function ProjectSection({
 }:{onSelect?:(p:Project)=>void}) {
 
   return(
+          <section
+        style={{
+
+          padding: "80px 0",
+        }}
+        id="skills"
+      >
     <div className="personalProjectSection" >
         <div style={{ display: "flex", justifyContent: "center", width: "100%", height: "100%" }}>
           <div className="personalProject">
@@ -97,5 +104,6 @@ export default function ProjectSection({
           </div>
         </div>
       </div>
+      </section>
   )
 }

@@ -11,33 +11,38 @@ export default function Architecture({
     <div
       onClick={close}
       style={{
-
-    width: "60%",
-    height: "60%",
-    objectFit: "contain",
+        position: "fixed",
+        inset: 0,                        
+        background: "rgba(0,0,0,0.55)", 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        zIndex: 99999,   // ⭐ ProjectModal보다 높게
-        position: "fixed",
-top: "50%",
-left: "50%",
-transform: "translate(-50%, -50%)",
+        zIndex: 99999,
       }}
     >
       {/* 내부 클릭은 닫히지 않게 */}
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{ position: "relative" }}
+        style={{
+          width: "60%",
+          height: "60%",
+          position: "relative",
+          borderRadius: 14,
+          background: "#fff",
+          border: "1px solid rgba(255,255,255,0.08)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+          overflow: "hidden"
+        }}
       >
         {/* 닫기 버튼 */}
         <div
           onClick={close}
           style={{
             position: "absolute",
-            top: 10,
-            right: 10,
-            cursor: "pointer"
+            top: 12,
+            right: 12,
+            cursor: "pointer",
+            zIndex: 2
           }}
         >
           <FaX color="#565555" size={22}/>
@@ -46,9 +51,9 @@ transform: "translate(-50%, -50%)",
         <img
           src={imageSrc}
           style={{
-    width: "100%",
-    height: "100%",
-            borderRadius: 12
+            width: "100%",
+            height: "100%",
+            objectFit: "contain"
           }}
         />
       </div>

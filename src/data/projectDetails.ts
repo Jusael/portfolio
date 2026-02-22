@@ -4,7 +4,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     standAloneApp: {
         projectId: "standAloneApp",
         gif: "/holoseogiapp.gif",
-        architecture: "/mesBackend.png",
+        architecture: "/holoseogiBackend.png",
         summary: [
             `1인 가구 라이프스타일 증가에 아이디어를 얻어, 설계 및 제작한 
 구독형 개인 관리 플랫폼입니다. 현재 Appstore에 출시 되어 있습니다.
@@ -34,7 +34,7 @@ Firebase 인증 이후 서버 JWT 재발급 구조를 적용하여
     standAloneWeb: {
         projectId: "standAloneWeb",
         gif: "/holoseogiweb.gif",
-        architecture: "/mesBackend.png",
+        architecture: "/holoseogiFront.png",
         summary: [
             `홀로서기 서비스 운영을 위해 제작한 관리자 웹 콘솔입니다.
 
@@ -58,7 +58,7 @@ Docker + Nginx 환경에서 정적 배포됩니다.
 
     mesApp: {
         projectId: "mesApp",
-        gif: "/holoseogiapp.gif",
+        gif: "/mesSamlImage.png",
         architecture: "/mesBackend.png",
         summary: [`
 사내 모바일 MES 프로젝트 경험을 기반으로,
@@ -69,7 +69,7 @@ WebSocket 기반 실시간 이벤트 흐름 등을 추가 설계했으며,
 실무 환경을 가정한 이벤트 기반 백엔드 구조를 구축했습니다.
 
 해당 구조는 개인 시간에 설계 후 사내 발표를 진행했고,
-일부 아키텍처 아이디어가 내부적으로 채택되었습니다.
+내부적으로 채택되었습니다.
 
 전체 절차도와 기술 상세 내용은 Deep Dive Docs에 정리했습니다.
 `],
