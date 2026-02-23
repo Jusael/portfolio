@@ -38,8 +38,26 @@ import { profilePicture } from "../assets";
                   padding: 1,
                   gap: 5
                 }}>
-                  <div><FaEnvelope color="#3153aa" /><span style={{ marginLeft: 12 }}>usael@naver.com</span></div>
-                  <div><FaGithub color="#3153aa" /><span style={{ marginLeft: 12 }}>https://github.com/Jusael</span></div>
+                  <div>
+  <FaEnvelope color="#3153aa" />
+  <a
+    href="mailto:usael@naver.com"
+    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa"}}
+  >
+    usael@naver.com
+  </a>
+</div>
+               <div>
+  <FaGithub color="#3153aa" />
+  <a
+    href="https://github.com/Jusael"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa"}}
+  >
+    github.com/Jusael
+  </a>
+</div>
                 </div>
               </div>
             </div>
