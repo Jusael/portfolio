@@ -1,4 +1,5 @@
 import type { Project } from "../types/project";
+import { holoseogiImage,holoseogiWebImage ,mesApp} from "../assets";
 
 export const projects: Project[] = [
   {
@@ -18,7 +19,7 @@ export const projects: Project[] = [
       "SpringBoot","Flutter","JPA","MyBatis","JWT",
       "AWS EC2","Docker","GitHub Actions","FCM"
     ],
-    image:"/holoseogiImage.jpg"
+    image:holoseogiImage
   },
  {
       projectId: "standAloneWeb",
@@ -42,7 +43,7 @@ export const projects: Project[] = [
         "Nginx",
         "GitHub Actions"
       ],
-      image: "/holoseogiWebImage.png"
+      image: holoseogiWebImage
     },
     {
       projectId: "mesApp",
@@ -69,6 +70,6 @@ export const projects: Project[] = [
         "Biometric Auth",
         "FCM"
       ],
-      image: "/mesApp.png"
+      image:mesApp
     },
 ];

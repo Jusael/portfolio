@@ -1,6 +1,7 @@
 import type { Project } from "../types/project";
 import { projects } from "../data/projects";
 
+
 export default function ProjectSection({
   onSelect
 }:{onSelect?:(p:Project)=>void}) {

@@ -13,7 +13,7 @@ export type ProjectDetail = {
   architecture: string;
   summary: string[];
   techDetail: string[];
-    notionDocs? : NotionDoc[];
+    notionDocs : NotionDoc[];
 };
 
 export type NotionDoc = {

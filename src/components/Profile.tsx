@@ -1,4 +1,5 @@
 import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { profilePicture } from "../assets";
 
     
  export default function ProfileSection() {   
@@ -16,7 +17,7 @@ import { FaEnvelope, FaGithub } from "react-icons/fa";
 
             <div className="profileLeft">
               <img
-                src="profilePicture.jpg"
+                src={profilePicture}
                 alt="Profile"
                 style={{ width: "100%", height: "auto"}}
               />
