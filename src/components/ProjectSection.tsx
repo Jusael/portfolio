@@ -40,6 +40,10 @@ export default function ProjectSection({
                   }}
                   onClick={() => onSelect?.(p)}
                 >
+  <div className="cornerRibbon">
+    <span>CLICK</span>
+  </div>
+  
                   <div
                     className="cardOverlay"
                     style={{

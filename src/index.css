@@ -220,3 +220,31 @@ gap: 45px;
 .projectCard:hover .cardOverlay {
   opacity: 0.35; /* 불투명도 */
 } 
+
+
+.cornerRibbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 7px;
+  border-top: 50px solid rgba(237, 235, 235, 0.85);   /* 색 + 투명도 */
+  border-left: 50px solid transparent;
+}
+
+.cornerRibbon span {
+  position: absolute;
+  top: -40px;
+  right: 5px;
+  transform: rotate(45deg);
+  color: rgb(96, 96, 96);
+  font-size: 11px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.projectCard:hover .cornerRibbon {
+  opacity: 0;
+  transition: 0.2s ease;
+}
