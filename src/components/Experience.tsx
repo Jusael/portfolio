@@ -10,19 +10,28 @@ type ExperienceBlock = {
 };
 
 export default function Experience() {
- const data: ExperienceBlock[] = [
+const data: ExperienceBlock[] = [
   {
     company: "GAMPIT",
-    period: "2022.02 ~ 2026.02",
-    summary: "GMP 기반 MES/WMS 백엔드 개발 및 인터페이스 아키텍처 설계",
+    period: "2022.02 ~ Present",
+    summary: "GMP 기반 제조·물류 시스템(MES/WMS) 백엔드 개발 및 시스템 인터페이스 아키텍처 설계",
 
     works: [
+      {
+        title: "MES Mobile PoC 및 개인 프로젝트",
+        date: "2024 ~ 2025",
+        desc: [
+          "MES 모바일 PoC 백엔드 구조 설계 및 사내 시연 이후 운영 개선 방향으로 채택",
+          "개인 구독형 SaaS 서비스 '홀로서기' Spring Boot 기반 백엔드 개발 및 App Store 출시",
+        ],
+      },
+
       {
         title: "휴젤 바이오 URS 2차 개발",
         date: "2025.08 ~ 2025.12",
         desc: [
-          "원·자재/반제품/완제품 Holding 프로세스 설계 및 구현 (공정 흐름 제어)",
-          "LIMS 인터페이스 조율 및 데이터 연동 개발",
+          "원자재·반제품·완제품 재고 Holding 상태 관리 로직 설계 및 공정 흐름 제어 백엔드 구현",
+          "LIMS 시스템 연동 API 설계 및 데이터 인터페이스 개발",
         ],
       },
 
@@ -30,9 +39,9 @@ export default function Experience() {
         title: "다산제약 WMS 완제품 모듈 고도화",
         date: "2025.07 ~ 2025.08",
         desc: [
-          "대용량 Excel 업로드 병목을 트랜잭션 분리 및 인덱스 최적화로 개선 (70% 단축)",
-          "반품 완제품 재출하 프로세스 신규 구현",
-          "수입 의약품 전용 관리 프로그램 설계 및 개발",
+          "대용량 Excel 업로드 처리 병목을 트랜잭션 분리 및 인덱스 최적화로 개선 (처리시간 약 70% 단축)",
+          "반품 완제품 재출하 로직 설계 및 재고 처리 백엔드 구현",
+          "수입 의약품 전용 관리 시스템 설계 및 백엔드 기능 개발",
         ],
       },
 
@@ -40,9 +49,9 @@ export default function Experience() {
         title: "하나제약 통합 MES 프로젝트",
         date: "2025.03 ~ 2025.07",
         desc: [
-          "SAP 인터페이스 구축 및 MES ↔ SAP 생산·출하 데이터 연동",
-          "RS-232 저울 연동 구조를 설비 마스터 기반 동적 매핑으로 개선",
-          "재포장 프로세스 설계로 반제품 재고 활용도 향상",
+          "MES ↔ SAP 간 생산 및 출하 데이터 인터페이스 API 구축",
+          "RS-232 저울 연동 구조를 설비 마스터 기반 동적 매핑 방식으로 개선",
+          "재포장 프로세스 로직 설계로 반제품 재고 활용도 향상",
         ],
       },
 
@@ -50,7 +59,7 @@ export default function Experience() {
         title: "케이바이오 원·자재 WMS 프로젝트",
         date: "2024.12 ~ 2025.03",
         desc: [
-          "현재 재고·시험 재고를 통합 반영한 생산 가능 배치 예측 기능 구현",
+          "현재 재고 및 시험 재고 데이터를 통합 반영한 생산 가능 배치 예측 로직 구현",
         ],
       },
 
@@ -58,8 +67,8 @@ export default function Experience() {
         title: "녹십자 오창 PBS 프로젝트",
         date: "2023.12 ~ 2024.06",
         desc: [
-          "다중 사용자 스캔 누락 문제를 Thread + Delegate 기반 동시 처리 구조로 개선",
-          "출하 속도 안정화 및 동시 작업 효율 약 30% 향상",
+          "다중 사용자 스캔 이벤트 누락 문제를 Thread 기반 동시 처리 구조로 개선",
+          "출하 처리 속도 안정화 및 동시 작업 효율 약 30% 향상",
         ],
       },
 
@@ -67,8 +76,8 @@ export default function Experience() {
         title: "녹십자 화순 WMS 프로젝트",
         date: "2023.04 ~ 2023.10",
         desc: [
-          "발주 데이터 연계 및 발주서 첨부 기능 개발로 문서 추적성 강화",
-          "폴링 기반 대시보드 구현으로 재고·적치 현황 가시성 개선",
+          "발주 데이터 연동 및 발주서 첨부 기능 개발로 문서 추적성 개선",
+          "폴링 기반 대시보드 구현으로 재고 및 적치 현황 가시성 개선",
         ],
       },
 
@@ -76,16 +85,7 @@ export default function Experience() {
         title: "휴젤 WMS URS 프로젝트",
         date: "2022.11 ~ 2022.12",
         desc: [
-          "현장 검증 기반 개선 프로세스 반영 및 운영 환경 최적화",
-        ],
-      },
-
-      {
-        title: "MES Mobile PoC 및 개인 프로젝트",
-        date: "2024 ~ 2025",
-        desc: [
-          "MES 모바일 PoC 설계 및 사내 채택",
-          "개인 프로젝트 '홀로서기' AppStore 출시 및 운영",
+          "현장 검증 기반 개선 요구사항 반영 및 운영 환경 최적화",
         ],
       },
     ],
@@ -94,13 +94,13 @@ export default function Experience() {
   {
     company: "GST",
     period: "2021.08 ~ 2022.01",
-    summary: "ERP 사용자 요구사항 기반 기능 개발",
+    summary: "ERP 시스템 사용자 요구사항 기반 기능 개발 및 유지보수",
     works: [
       {
         title: "ERP 유지보수 및 기능 개발",
         date: "2021",
         desc: [
-          "업무 요청 기반 신규 화면 개발 및 기존 기능 개선",
+          "업무 요청 기반 신규 기능 개발 및 기존 시스템 기능 개선",
         ],
       },
     ],
