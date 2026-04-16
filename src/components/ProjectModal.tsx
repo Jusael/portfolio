@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { Project } from "../types/project";
 import { projectDetails } from "../data/projectDetails";
 import { FaX } from "react-icons/fa6";
@@ -23,22 +23,35 @@ export default function ProjectModal({
           ? { width: 1440, maxWidth: "98vw" as const, maxHeight: "96vh" as const }
           : { width: 900, maxWidth: "55vw" as const, maxHeight: "72vh" as const };
 
-    const gifColumnPct = isWeb ? "100%" : isNanoBanana ? "52%" : "30%";
-    const textColumnPct = isWeb ? "60%" : isNanoBanana ? "48%" : "70%";
+    const gifColumnPct = isWeb ? undefined : isNanoBanana ? "52%" : "30%";
+    const textColumnPct = isWeb ? undefined : isNanoBanana ? "48%" : "70%";
     const isDeepDiveDocs = !!selectedDetail.notionDocs?.length;
     const hasArchitecture = Boolean(selectedDetail.architecture?.trim());
 
     const [openTech, setOpenTech] = useState(false);
+    const [gifReady, setGifReady] = useState(false);
+    const imgRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        setGifReady(false);
+    }, [selected.projectId, selectedDetail.gif]);
+
+    useLayoutEffect(() => {
+        const el = imgRef.current;
+        if (el?.complete && el.naturalWidth > 0) {
+            setGifReady(true);
+        }
+    }, [selected.projectId, selectedDetail.gif]);
 
     if (!selectedDetail) return null;
 
     return (
         <div
-            className="project-modal-backdrop"
+            className={`project-modal-backdrop${isWeb ? " project-modal-backdrop--web" : ""}`}
             onClick={close}
         >
             <div
-                className="project-modal-panel"
+                className={`project-modal-panel${isWeb ? " project-modal-panel--web" : ""}`}
                 onClick={(e) => e.stopPropagation()}
                 style={{
                     padding: 30,
@@ -67,36 +80,46 @@ export default function ProjectModal({
                 </div>
                 {selectedDetail && (
                     <>
-                        <div className="project-modal-body">
+                        <div className={`project-modal-body${isWeb ? " project-modal-body--web" : ""}`}>
                             <div
                                 className="project-modal-gif-col"
-                                style={{
-                                    width: gifColumnPct
-                                }}
+                                style={gifColumnPct ? { width: gifColumnPct } : undefined}
                             >
-
-                                <img
-                                    src={selectedDetail.gif}
-                                    alt=""
-                                    style={{
-                                        width: "100%",
-                                        height: "auto",
-                                        borderRadius: 10,
-                                        marginTop: 10,
-                                        display: "block",
-                                        ...(isNanoBanana
-                                            ? {
-                                                  maxHeight: "min(84vh, 920px)",
-                                                  objectFit: "contain" as const,
-                                              }
-                                            : {}),
-                                    }}
-                                 />
+                                <div className="project-modal-gif-wrap">
+                                    {!gifReady && (
+                                        <div className="project-modal-gif-loading" aria-busy="true">
+                                            <span className="project-modal-gif-spinner" aria-hidden />
+                                            로딩 중…
+                                        </div>
+                                    )}
+                                    <img
+                                        ref={imgRef}
+                                        src={selectedDetail.gif}
+                                        alt=""
+                                        onLoad={() => setGifReady(true)}
+                                        onError={() => setGifReady(true)}
+                                        style={{
+                                            width: "100%",
+                                            height: "auto",
+                                            borderRadius: 10,
+                                            marginTop: 10,
+                                            display: "block",
+                                            opacity: gifReady ? 1 : 0,
+                                            transition: "opacity 0.2s ease",
+                                            ...(isNanoBanana
+                                                ? {
+                                                      maxHeight: "min(84vh, 920px)",
+                                                      objectFit: "contain" as const,
+                                                  }
+                                                : {}),
+                                        }}
+                                     />
+                                </div>
                             </div>
 
                             <div
                                 className="project-modal-text-col"
-                                style={{ width: textColumnPct }}
+                                style={textColumnPct ? { width: textColumnPct } : undefined}
                             >
                                 <h4 style={{ marginBottom: 0 }}>Summary</h4>
                                 <div
