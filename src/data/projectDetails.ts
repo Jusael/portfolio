@@ -1,5 +1,13 @@
 import type { ProjectDetail } from "../types/project";
-import { holoseogiapp,holoseogiweb,holoseogiBackend,holoseogiFront,mesBackend ,mesSamImage} from "../assets";
+import {
+  holoseogiapp,
+  holoseogiweb,
+  holoseogiBackend,
+  holoseogiFront,
+  mesBackend,
+  mesSamImage,
+  nanobananaAutoGif,
+} from "../assets";
 
 export const projectDetails: Record<string, ProjectDetail> = {
     standAloneApp: {
@@ -87,5 +95,28 @@ WebSocket 기반 실시간 이벤트 흐름 등을 추가 설계했으며,
             { title: "Kafka Queue 재전송 처리 로직", url: "https://www.notion.so/Kafka-Queue-24a42636c5268097b0e0faacac8a271b?source=copy_link" },
             { title: "CI/CD 파이프라인 구성도", url: "https://www.notion.so/CI-CD-25342636c526807b853bfa0d0ed29244?source=copy_link" },
             { title: "Database 성능 개선", url: "https://www.notion.so/Data-base-89b1c21073ab4a748c4cd13dd03821ca?source=copy_link" }]
+    },
+
+    nanobananaAuto: {
+        projectId: "nanobananaAuto",
+        gif: nanobananaAutoGif,
+        summary: [`
+SaaS 서비스 '홀로서기'의 마케팅 운영 공수를 절감하기 위해 
+설계 및 구축한 SNS 콘텐츠 자동 배포 파이프라인입니다.
+
+Gemini API를 활용해 인스타그램 캐러셀 이미지를 자동 생성하며,
+브랜드 마스코트 이미지를 인라인 참조로 결합하여 
+콘텐츠의 일관성을 유지하는 맞춤형 프롬프트 엔진을 구축했습니다.
+
+Python 스크립트와 SSE(Server-Sent Events) 스트리밍을 연동하여
+생성부터 업로드까지 독립적으로 수행되는 Internal Tool 생태계를 구성했습니다.`],
+        techDetail: [
+            "Claudecode 기반 아키텍처 설계 및 파이프라인 구현",
+            "Gemini API 연동 및 마스코트 이미지 기반 맞춤형 프롬프트 엔진 개발",
+            "DB 기반 프롬프트 템플릿 제어",
+            "SSE(Server-Sent Events) 활용 피드 생성 실시간 스트리밍 구현",
+            "Python(instagrapi) 및 Spring Scheduler 기반 무인 배포 자동화"
+        ],
+        notionDocs: []
     }
 };

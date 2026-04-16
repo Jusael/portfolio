@@ -10,7 +10,8 @@ export type Project = {
 export type ProjectDetail = {
   projectId: string;
   gif: string;
-  architecture: string;
+  /** 없으면 모달에서 Architecture 블록을 숨김 */
+  architecture?: string;
   summary: string[];
   techDetail: string[];
     notionDocs : NotionDoc[];

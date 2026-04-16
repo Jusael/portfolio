@@ -18,7 +18,18 @@ export default function ProjectModal({
 
     const selectedDetail = projectDetails[selected.projectId];
     const isWeb = selected.projectId == "standAloneWeb"
+    const isNanoBanana = selected.projectId === "nanobananaAuto";
+
+    const modalFrame = isWeb
+        ? { width: 1200, maxWidth: "95vw" as const, maxHeight: "92vh" as const }
+        : isNanoBanana
+          ? { width: 1440, maxWidth: "98vw" as const, maxHeight: "96vh" as const }
+          : { width: 900, maxWidth: "55vw" as const, maxHeight: "72vh" as const };
+
+    const gifColumnPct = isWeb ? "100%" : isNanoBanana ? "52%" : "30%";
+    const textColumnPct = isWeb ? "60%" : isNanoBanana ? "48%" : "70%";
     const isDeepDiveDocs = !!selectedDetail.notionDocs?.length;
+    const hasArchitecture = Boolean(selectedDetail.architecture?.trim());
 
     const [openTech, setOpenTech] = useState(false);
 
@@ -46,10 +57,10 @@ export default function ProjectModal({
                 style={{
                     background: "white",
                     padding: 30,
-                    width: isWeb ? 1200 : 900,
-                    maxWidth: isWeb ? "95vw" : "55vw",
+                    width: modalFrame.width,
+                    maxWidth: modalFrame.maxWidth,
                     borderRadius: 10,
-                    maxHeight: isWeb ? "92vh" : "72h",
+                    maxHeight: modalFrame.maxHeight,
                     overflowY: "auto"
                 }}
             >
@@ -75,7 +86,7 @@ export default function ProjectModal({
                         <div style={{ display: "flex", flexDirection: "row", gap: 20 }}>
                             <div
                                 style={{
-                                    width: isWeb ? "100%" : "30%"
+                                    width: gifColumnPct
                                 }}
                             >
 
@@ -83,15 +94,21 @@ export default function ProjectModal({
                                     src={selectedDetail.gif}
                                     style={{
                                         width: "100%",
-                                        height: "auto",       
+                                        height: "auto",
                                         borderRadius: 10,
                                         marginTop: 10,
-                                        display: "block"
+                                        display: "block",
+                                        ...(isNanoBanana
+                                            ? {
+                                                  maxHeight: "min(84vh, 920px)",
+                                                  objectFit: "contain" as const,
+                                              }
+                                            : {}),
                                     }}
                                  />
                             </div> 
 
-                            <div style={{ width: isWeb ? "60%" : "70%", display: "flex", flexDirection: "column", }}>
+                            <div style={{ width: textColumnPct, display: "flex", flexDirection: "column", }}>
                                 <h4 style={{ marginBottom: 0 }}>Summary</h4>
                                 <div
                                     style={{
@@ -106,22 +123,25 @@ export default function ProjectModal({
                                     {selectedDetail.summary}
                                 </div>
 
-                                <h4 style={{ marginBottom: 0 }}>Architecture</h4>
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        height: 1,
-                                        background: "#e5e5e5",
-                                        marginTop: 0
-                                    }}
-
-                                />
-                                <div
-                                    style={{ cursor: "pointer", color: "#3153aa" }}
-                                    onClick={openArchitecture}
-                                >
-                                    Architecture Image
-                                </div>
+                                {hasArchitecture && (
+                                    <>
+                                        <h4 style={{ marginBottom: 0 }}>Architecture</h4>
+                                        <div
+                                            style={{
+                                                width: "100%",
+                                                height: 1,
+                                                background: "#e5e5e5",
+                                                marginTop: 0
+                                            }}
+                                        />
+                                        <div
+                                            style={{ cursor: "pointer", color: "#3153aa" }}
+                                            onClick={openArchitecture}
+                                        >
+                                            Architecture Image
+                                        </div>
+                                    </>
+                                )}
 
                                 {isDeepDiveDocs && (
                                     <>

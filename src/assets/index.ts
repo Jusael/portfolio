@@ -10,6 +10,9 @@ import mesBackend from "./mesBackend.png";
 import mesBigImage from "./mesBigImage.png";
 import mesSamImage from "./mesSamlImage.png";
 
+import nanobananaAutoGif from "./nanobananaAutoImage.gif";
+import nanobananaAutoImage from "./nanobananaAutoImage.png";
+
 import profilePicture from "./profilePicture.png";
 
 import reactLogo from "./react.svg";
@@ -27,6 +30,9 @@ export {
   mesBackend,
   mesBigImage,
   mesSamImage,
+
+  nanobananaAutoGif,
+  nanobananaAutoImage,
 
   profilePicture,
 

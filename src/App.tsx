@@ -15,6 +15,10 @@ export default function App() {
 
   const [selectProject, setSelected] = useState<Project | null>(null);
   const [openArchitecture, setOpenArchitecture] = useState(false);
+  const architectureImageSrc =
+    selectProject != null
+      ? projectDetails[selectProject.projectId]?.architecture
+      : undefined;
   const move = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -47,9 +51,9 @@ export default function App() {
       <Experience />
 
       <div style={{ display: "flex" }}>
-        {openArchitecture && selectProject && (
+        {openArchitecture && architectureImageSrc && (
           <Architecture
-            imageSrc={projectDetails[selectProject.projectId].architecture}
+            imageSrc={architectureImageSrc}
             close={() => setOpenArchitecture(false)}
           />
         )}

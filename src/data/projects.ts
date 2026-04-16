@@ -1,5 +1,10 @@
 import type { Project } from "../types/project";
-import { holoseogiImage,holoseogiWebImage ,mesApp} from "../assets";
+import {
+  holoseogiImage,
+  holoseogiWebImage,
+  mesApp,
+  nanobananaAutoImage,
+} from "../assets";
 
 export const projects: Project[] = [
   {
@@ -21,55 +26,80 @@ export const projects: Project[] = [
     ],
     image:holoseogiImage
   },
- {
-      projectId: "standAloneWeb",
-      title: "홀로서기 어드민 웹",
-      subTitle: "운영 관리용 관리자 웹 콘솔",
-      desc: [
-        "관리자 전용 웹 콘솔",
-        "JWT 기반 관리자 인증 구조",
-        "트래픽 대시보드 시각화",
-        "React TypeScript UI 설계",
-        "Nginx Docker 정적 배포",
-        "CI/CD 자동화 구축"
-      ],
-      tech: [
-        "React",
-        "TypeScript",
-        "REST API",
-        "JWT",
-        "Recharts",
-        "Docker",
-        "Nginx",
-        "GitHub Actions"
-      ],
-      image: holoseogiWebImage
-    },
-    {
-      projectId: "mesApp",
-      title: "모바일 MES",
-      subTitle: "사내 PoC 제안 및 검증 후 채택된 모바일 MES",
-      desc: [
-        "Kafka 기반 외부 시스템 인터페이스 구성",
-        "Producer/Consumer 상태 추적 로직 설계",
-        "Queue 기반 메시지 안정성 처리",
-        "생체인증 전자서명 프로세스 구현",
-        "바코드 리딩 기반 현장 업무 지원",
-        "실서비스 트랜잭션 흐름 반영"
-      ],
-      tech: [
-        "Spring Boot",
-        "Flutter",
-        "Kafka",
-        "WebSocket",
-        "JWT",
-        "MyBatis",
-        "Stored Procedure",
-        "Queue Pattern",
-        "SQLite",
-        "Biometric Auth",
-        "FCM"
-      ],
-      image:mesApp
-    },
+  {
+    projectId: "standAloneWeb",
+    title: "홀로서기 어드민 웹",
+    subTitle: "운영 관리용 관리자 웹 콘솔",
+    desc: [
+      "관리자 전용 웹 콘솔",
+      "JWT 기반 관리자 인증 구조",
+      "트래픽 대시보드 시각화",
+      "React TypeScript UI 설계",
+      "Nginx Docker 정적 배포",
+      "CI/CD 자동화 구축"
+    ],
+    tech: [
+      "React",
+      "TypeScript",
+      "REST API",
+      "JWT",
+      "Recharts",
+      "Docker",
+      "Nginx",
+      "GitHub Actions"
+    ],
+    image: holoseogiWebImage
+  },
+  {
+    projectId: "nanobananaAuto",
+    title: "SNS 마케팅 자동화 파이프라인",
+    subTitle: "LLM 기반 캐러셀 생성 및 자동 업로드 파이프라인",
+    desc: [
+      "이미지 자동 생성 및 배포 파이프라인 구축",
+      "DB 템플릿 관리 및 Fail-Fast 검증 로직 구현",
+      "Python 연동 인스타그램 무인 배포 자동화",
+      "SSE 활용 생성 과정 실시간 스트리밍 구현",
+    ],
+    tech: [
+      "Claudecode",
+      "Spring Boot",
+      "JPA/Hibernate",
+      "MySQL",
+      "Gemini API",
+      "Python",
+      "Spring Scheduler",
+      "SSE",
+      "Vite",
+      "React",
+      "TypeScript"
+    ],
+    image: nanobananaAutoImage
+  },
+  {
+    projectId: "mesApp",
+    title: "모바일 MES",
+    subTitle: "사내 PoC 제안 및 검증 후 채택된 모바일 MES",
+    desc: [
+      "Kafka 기반 외부 시스템 인터페이스 구성",
+      "Producer/Consumer 상태 추적 로직 설계",
+      "Queue 기반 메시지 안정성 처리",
+      "생체인증 전자서명 프로세스 구현",
+      "바코드 리딩 기반 현장 업무 지원",
+      "실서비스 트랜잭션 흐름 반영"
+    ],
+    tech: [
+      "Spring Boot",
+      "Flutter",
+      "Kafka",
+      "WebSocket",
+      "JWT",
+      "MyBatis",
+      "Stored Procedure",
+      "Queue Pattern",
+      "SQLite",
+      "Biometric Auth",
+      "FCM"
+    ],
+    image: mesApp
+  },
 ];
