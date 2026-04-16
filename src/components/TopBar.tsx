@@ -1,20 +1,14 @@
-export default function TopBar({ move }: { move:(id:string)=>void }) {
+export default function TopBar({ move }: { move: (id: string) => void }) {
   return (
-    <div style={{
-      position:"fixed",top:0,left:0,width:"100%",height:60,
-      background:"#fff",borderBottom:"1px solid #eee",
-      display:"flex",alignItems:"center",justifyContent:"space-between",
-      padding:"0 40px",zIndex:1000
-   ,boxSizing:"border-box"
-    }}>
-      <div style={{fontWeight:20,fontSize:20}}>Portfolio</div>
+    <div className="top-bar">
+      <div className="top-bar-brand">Portfolio</div>
 
-      <div style={{display:"flex",gap:20,cursor:"pointer"  ,minWidth:0   , flexWrap:"wrap"}}>
-        <span onClick={()=>move("profile")}>Profile</span>
-        <span onClick={()=>move("techStack")}>TechStack</span>
-        <span onClick={()=>move("personalProject")}>Personal Project</span>
-        <span onClick={()=>move("experience")}>Experience</span>
-      </div>
+      <nav className="top-bar-nav" aria-label="섹션 이동">
+        <span onClick={() => move("profile")}>Profile</span>
+        <span onClick={() => move("techStack")}>TechStack</span>
+        <span onClick={() => move("personalProject")}>Personal Project</span>
+        <span onClick={() => move("experience")}>Experience</span>
+      </nav>
     </div>
   );
 }

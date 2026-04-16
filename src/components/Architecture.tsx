@@ -22,10 +22,9 @@ export default function Architecture({
     >
       {/* 내부 클릭은 닫히지 않게 */}
       <div
+        className="architecture-frame"
         onClick={(e) => e.stopPropagation()}
         style={{
-          width: "60%",
-          height: "60%",
           position: "relative",
           borderRadius: 14,
           background: "#fff",

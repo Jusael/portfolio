@@ -109,17 +109,17 @@ const data: ExperienceBlock[] = [
 
   return (
       <section
+        className="section-block"
         style={{
           background: "#f7f7f7",
-          padding: "80px 0",
         }}
-        id="skills"
+        id="experience"
       >
       <div style={{ display: "flex", justifyContent: "center", background: "#f7f7f7" }}>
         <div className="skill">
           {/* LEFT */}
           <div className="skillLeft">
-            <p style={{ margin: 0, fontSize: 36 ,color: "#3153aa" }}>
+            <p className="section-label" style={{ margin: 0, fontSize: 36 ,color: "#3153aa" }}>
               Experience
             </p>
           </div>
@@ -130,7 +130,7 @@ const data: ExperienceBlock[] = [
               {data.map((block) => (
                 <div key={block.company}>
                   {/* 회사명 */}
-                  <div style={{ fontSize: 24, fontWeight: 500 }}>{block.company}</div>
+                  <div className="exp-company" style={{ fontSize: 24, fontWeight: 500 }}>{block.company}</div>
 
                   {/* 기간 */}
                   <div style={{ color: "#777", fontSize: 14, marginTop: 4 }}>{block.period}</div>

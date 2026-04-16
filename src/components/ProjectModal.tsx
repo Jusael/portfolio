@@ -3,9 +3,6 @@ import type { Project } from "../types/project";
 import { projectDetails } from "../data/projectDetails";
 import { FaX } from "react-icons/fa6";
 
-
-
-
 export default function ProjectModal({
     selected,
     close,
@@ -36,35 +33,22 @@ export default function ProjectModal({
     if (!selectedDetail) return null;
 
     return (
-
-
         <div
+            className="project-modal-backdrop"
             onClick={close}
-            style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                background: "rgba(0,0,0,.5)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
         >
             <div
+                className="project-modal-panel"
                 onClick={(e) => e.stopPropagation()}
                 style={{
-                    background: "white",
                     padding: 30,
                     width: modalFrame.width,
                     maxWidth: modalFrame.maxWidth,
-                    borderRadius: 10,
                     maxHeight: modalFrame.maxHeight,
-                    overflowY: "auto"
                 }}
             >
                 <div
+                    className="project-modal-header"
                     style={{
                         margin: "-30px -30px 20px -30px",
                         padding: "18px 30px",
@@ -76,15 +60,16 @@ export default function ProjectModal({
                         fontWeight: 600
                     }}
                 >
-                    <div style={{ display: "flex", justifyContent: "space-between", }}>
-                        <div>{selected.title} </div>
-                        <div style={{ display: "flex", alignItems: "center" }} onClick={close}><FaX color="#f9f9f9" /></div>
+                    <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                        <div style={{ lineHeight: 1.35 }}>{selected.title}</div>
+                        <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }} onClick={close}><FaX color="#f9f9f9" /></div>
                     </div>
                 </div>
                 {selectedDetail && (
                     <>
-                        <div style={{ display: "flex", flexDirection: "row", gap: 20 }}>
+                        <div className="project-modal-body">
                             <div
+                                className="project-modal-gif-col"
                                 style={{
                                     width: gifColumnPct
                                 }}
@@ -92,6 +77,7 @@ export default function ProjectModal({
 
                                 <img
                                     src={selectedDetail.gif}
+                                    alt=""
                                     style={{
                                         width: "100%",
                                         height: "auto",
@@ -106,9 +92,12 @@ export default function ProjectModal({
                                             : {}),
                                     }}
                                  />
-                            </div> 
+                            </div>
 
-                            <div style={{ width: textColumnPct, display: "flex", flexDirection: "column", }}>
+                            <div
+                                className="project-modal-text-col"
+                                style={{ width: textColumnPct }}
+                            >
                                 <h4 style={{ marginBottom: 0 }}>Summary</h4>
                                 <div
                                     style={{
@@ -159,6 +148,7 @@ export default function ProjectModal({
                                         <div style={{ marginTop: 5, fontSize: 14, marginLeft: 10, cursor: "pointer", color: "#3153aa" }}>
                                             {selectedDetail.notionDocs?.map((doc) => (
                                                 <div
+                                                    key={doc.title}
                                                     style={{ margin: 4 }}
                                                     onClick={() => window.open(doc.url)}
                                                 >
@@ -199,8 +189,6 @@ export default function ProjectModal({
             </div>
 
         </div>
-
-
 
     );
 

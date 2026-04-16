@@ -8,26 +8,23 @@ export default function ProjectSection({
 
   return(
           <section
-        style={{
-
-          padding: "80px 0",
-        }}
-        id="skills"
+        className="section-block section-block--personal"
+        id="personalProject"
       >
     <div className="personalProjectSection" >
-        <div style={{ display: "flex", justifyContent: "center", width: "100%", height: "100%" }}>
+        <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <div className="personalProject">
             <div className="personalProjectLeft">
-              <p style={{ margin: 0, fontSize: 36, color: "#3153aa" }}>
+              <p className="section-label" style={{ margin: 0, fontSize: 36, color: "#3153aa" }}>
                 PERSONAL
               </p>
-              <p style={{ margin: 0, fontSize: 36, color: "#3153aa" }}>PROJECT</p>
+              <p className="section-label" style={{ margin: 0, fontSize: 36, color: "#3153aa" }}>PROJECT</p>
             </div>
 
             <div className="personalProjectRight">
               {projects.map((p) => (
                 <div
-                  className="projectCard"
+                  className="projectCard project-card-surface"
                   key={p.title}
                   style={{
                     border: "1px solid #ddd",
@@ -36,7 +33,6 @@ export default function ProjectSection({
                     cursor: "pointer",
                     marginBottom: 15,
                     position: "relative",
-                    width: "70%"
                   }}
                   onClick={() => onSelect?.(p)}
                 >
@@ -52,17 +48,7 @@ export default function ProjectSection({
                   />
                   <h3 style={{ marginTop: 1 }}>{p.title}</h3>
                   <h4 style={{ marginTop: 1 }}>{p.subTitle}</h4>
-                  <div
-                    style={{
-
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      columnGap: 20,
-                      rowGap: 4,
-                      marginTop: 8
-
-                    }}
-                  >
+                  <div className="project-card-desc-grid">
 
                     {
                       p.desc.map((t) => (

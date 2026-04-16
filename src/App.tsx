@@ -30,13 +30,10 @@ export default function App() {
 
       <TopBar move={move} />
 
-      <div id="profile"></div>
       <ProfileSection />
 
-      <div id="techStack"></div>
       <SkillSection />
 
-      <div id="personalProject"> </div>
       <ProjectSection onSelect={(p) => setSelected(p)} />
 
       {selectProject &&
@@ -47,7 +44,6 @@ export default function App() {
         />}
 
 
-      <div id="experience"></div>
       <Experience />
 
       <div style={{ display: "flex" }}>

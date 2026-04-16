@@ -2,11 +2,11 @@ export default function SkillSection() {
   return (
     <div className="skillSection">
       <section
+        className="section-block"
         style={{
           background: "#f7f7f7",
-          padding: "80px 0",
         }}
-        id="skills"
+        id="techStack"
       >
         <div
           style={{
@@ -15,11 +15,9 @@ export default function SkillSection() {
           }}
         >
           <div className="skill">
-            <div
-              className="skillLeft"
-              style={{}}
-            >
+            <div className="skillLeft">
               <p
+                className="section-label"
                 style={{
                   margin: 0,
                   fontSize: 36,
@@ -31,74 +29,43 @@ export default function SkillSection() {
             </div>
 
             <div className="skillRight">
-              <p
-                style={{
-                  marginTop: 0,
-                  lineHeight: 1.7,
-                  fontSize: 24,
-                  color: "gray",
-                }}
-              >
+              <p className="skill-cat" style={{ marginTop: 0 }}>
                 <b>Backend</b> —
               </p>
 
-              <p style={{ marginLeft: 25, marginTop: -10 }}>
+              <p className="skill-list">
                 Java · JPA · Spring Boot · MyBatis · JWT · REST API · C# · ASP.NET
               </p>
 
-              <p
-                style={{
-                  lineHeight: 1.7,
-                  fontSize: 24,
-                  color: "gray",
-                }}
-              >
+              <p className="skill-cat-spaced">
                 <b>Database</b> —
               </p>
 
-              <p style={{ marginLeft: 25, marginTop: -10 }}>
+              <p className="skill-list">
                 SQL Server · MySQL · Query Optimization
               </p>
 
-              <p
-                style={{
-                  lineHeight: 1.7,
-                  fontSize: 24,
-                  color: "gray",
-                }}
-              >
+              <p className="skill-cat-spaced">
                 <b>Infra</b> —
               </p>
 
-              <p style={{ marginLeft: 25, marginTop: -10 }}>
+              <p className="skill-list">
                 AWS EC2 · Docker · Nginx · GitHub Actions · CI/CD
               </p>
 
-              <p
-                style={{
-                  lineHeight: 1.7,
-                  fontSize: 24,
-                  color: "gray",
-                }}
-              >
+              <p className="skill-cat-spaced">
                 <b>Integration</b> —
               </p>
 
-              <p style={{ marginLeft: 25, marginTop: -10 }}>
+              <p className="skill-list">
                 Kafka · WebSocket · Firebase FCM · OpenAI API
               </p>
 
-              <p
-                style={{
-                  lineHeight: 1.7,
-                  fontSize: 24,
-                  color: "gray",
-                }}
-              >
+              <p className="skill-cat-spaced">
                 <b>Frontend</b> —
               </p>
 
-              <p style={{ marginLeft: 25, marginTop: -10 }}>
+              <p className="skill-list">
                 React · TypeScript · Dart · Flutter
               </p>
             </div>

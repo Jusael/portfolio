@@ -4,7 +4,7 @@ import { profilePicture } from "../assets";
     
  export default function ProfileSection() {   
     return (
-    <div className="profileSection">
+    <div className="profileSection" id="profile">
         <div style={{
 
           paddingTop: 0,
@@ -24,13 +24,13 @@ import { profilePicture } from "../assets";
             </div>
 
             <div className="profileRight">
-              <p style={{ margin: 0, fontSize: 50, color: "#3153aa" }}>
+              <p className="profile-name" style={{ margin: 0, fontSize: 50, color: "#3153aa" }}>
                 박정현
                 <span style={{ marginLeft: 10, fontSize: 14, color: "#5a5a5c" }}>1997.10.24</span></p>
-              <p style={{ color: "#3153aa" }}>Backend Engineer</p>
+              <p className="profile-role" style={{ color: "#3153aa", margin: "8px 0 0" }}>Backend Engineer</p>
 
               <div style={{ marginTop: 30 }}>
-                <div style={{
+                <div className="profile-meta-row" style={{
                   display: "flex",
                   flexDirection: "column",
                   margin: 1,
@@ -42,7 +42,7 @@ import { profilePicture } from "../assets";
   <FaEnvelope color="#3153aa" />
   <a
     href="mailto:usael@naver.com"
-    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa"}}
+    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa", wordBreak: "break-all"}}
   >
     usael@naver.com
   </a>
@@ -53,7 +53,7 @@ import { profilePicture } from "../assets";
     href="https://github.com/Jusael"
     target="_blank"
     rel="noopener noreferrer"
-    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa"}}
+    style={{ marginLeft: 12, textDecoration:"none", color:"#3153aa", wordBreak: "break-all"}}
   >
     github.com/Jusael
   </a>
@@ -73,7 +73,7 @@ import { profilePicture } from "../assets";
             }}>
 
             <div className="inproduceLeft" style={{ marginTop: 0 }}>
-              <p style={{
+              <p className="section-label" style={{
                 margin: 0,
                 fontSize: 36,
                 color: "#3153aa",
