@@ -42,7 +42,7 @@ export default function SkillSection() {
               </p>
 
               <p className="skill-list">
-                SQL Server · MySQL · Query Optimization
+                SQL Server · MySQL · PostgreSQL · Query Optimization
               </p>
 
               <p className="skill-cat-spaced">

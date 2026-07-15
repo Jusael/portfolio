@@ -1,3 +1,10 @@
+:root {
+  /* 본문·한글: Pretendard / 영문 제목: Sora */
+  --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "Sora", "Pretendard", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Pretendard", monospace;
+}
+
 *,
 *::before,
 *::after {
@@ -9,7 +16,7 @@ html {
 }
 
 html, body, #root {
-  
+
   margin: 0;
   padding: 0;
 }
@@ -17,11 +24,18 @@ html, body, #root {
 /* Vite 기본 body flex 있으면 반드시 제거! */
 body {
   overflow-x: hidden;
-  font-family:
-    "Malgun Gothic",
-    "Apple SD Gothic Neo",
-    "Noto Sans KR",
-    sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 모든 텍스트 Pretendard로 통일 (제목류도 동일) */
+.top-bar-brand,
+.profile-name,
+.profile-role,
+.section-label,
+.exp-company {
+  font-family: var(--font-body);
 }
 
 /* 고정 탑바 높이만큼 본문 시작 */

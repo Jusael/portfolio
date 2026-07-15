@@ -85,8 +85,8 @@ import { profilePicture } from "../assets";
             <div className="inproduceRight"
             >
 
-              <p className="summaryText"style={{
-  fontFamily: '-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", Arial, sans-serif'
+              <p className="summaryText" style={{
+  fontFamily: "var(--font-body)"
 }}>
                 {
 `운영 환경까지 고려한 설계를 지향하는 백엔드 개발자입니다.
@@ -98,9 +98,9 @@ MES/WMS/RWS/GMP 일련번호 추적관리 우수 의약품 제조·관리 기준
 각 다른 클라이언트 요구사항에 대해 표준적인 비지니스 로직 확립 후,  데이터 흐름과 트랜잭션 구조를 개선 하며 
 실제 운영 환경에서의 문제 해결과 성능 개선을 경험했습니다.
 
-현재는 Spring Boot 기반으로 기술 스택을 확장하며 다양한 도메인 경험을 쌓고 있습니다.
-개인 구독형 SaaS 프로젝트 ‘홀로서기’를 App Store에 출시하여
-JWT 인증 구조와 CI/CD 자동 배포 환경을 직접 설계하고 운영하고 있습니다.`}
+Spring Boot 기반으로 기술 스택을 확장하며 다양한 도메인 경험을 쌓고 있습니다.
+개인 구독형 SaaS ‘홀로서기’를 App Store에 출시·운영하고 있으며,
+현재는 탄소감축(ESG)과 AI를 접목한 서비스를 개발·운영하며 경험의 폭을 넓혀가고 있습니다.`}
               </p>
             </div>
           </div>
